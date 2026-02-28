@@ -121,13 +121,13 @@
 
         /* Główny kontejner s Gridem */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: -50px auto 50px; /* Posun nahoru přes hero sekci */
             background: white;
             display: grid;
-            grid-template-columns: 1.5fr 1fr; /* Flexibilní rozvržení */
-            gap: 40px;
-            padding: 50px;
+            grid-template-columns: 1fr 1fr; /* Flexibilní rozvržení */
+            gap: 60px;
+            padding: 60px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
