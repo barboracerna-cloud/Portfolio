@@ -197,11 +197,15 @@
         }
 
         /* Responzivita pro mobily */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                margin: 20px;
-                padding: 30px;
-            }
-            .hero h1 { font-size: 2rem; }
-        }
+       .links-container {
+        grid-template-columns: 1fr; /* Obrázky budou pod sebou */
+        gap: 16px;
+    }
+
+    .link-box {
+        min-height: auto; /* Box se přizpůsobí výšce obrázku */
+        padding: 10px;
+    }
+
+    .hero h1 { font-size: 2rem; }
+}
