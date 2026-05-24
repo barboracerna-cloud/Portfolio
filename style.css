@@ -229,28 +229,12 @@ body {
     display: block;
 }
 
-/* Responzivita pro mobily */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        margin: 20px;
-        padding: 30px;
-        gap: 40px;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .links-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-image {
-        max-width: 100%;
-    }
-}
+        /* Responzivita pro mobily */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 20px;
+                padding: 30px;
+            }
+            .hero h1 { font-size: 2rem; }
+        }
