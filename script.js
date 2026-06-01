@@ -1,75 +1,40 @@
-// Funkce pro kontrolu sudého/lichého čísla
-let historia = [];
+let hrac = {
+  jmeno: "HENRY",
+  zivoty: 50,
+  sila: 15,
 
-function kontrola() {
-    const cisloInput = document.getElementById('cislo');
-    const resultDiv = document.getElementById('result');
-    const cislo = parseInt(cisloInput.value);
+  inventory: ["meč", "potion", "štít"],
 
-    // Validace vstupu
-    if (cisloInput.value === '' || isNaN(cislo)) {
-        resultDiv.className = 'error';
-        resultDiv.textContent = '❌ Prosím, zadej platné číslo!';
-        resultDiv.style.display = 'block';
-        return;
-    }
+  vypijLektvar: function() {
+    if (this.inventory.includes("potion")) {
+      this.zivoty += 20;
+      if (this.zivoty > 100) this.zivoty = 100;
 
-    // Kontrola sudosti/lichosti
-    let zprava = '';
-    let typ = '';
+      let indexLektvaru = this.inventory.indexOf("potion");
+      this.inventory.splice(indexLektvaru, 1);
 
-    if (cislo % 2 === 0) {
-        zprava = `✅ Číslo ${cislo} je SUDÉ`;
-        typ = 'SUDÉ';
-        resultDiv.className = 'success';
+      alert("Rytíř " + this.jmeno + " vypil lektvar. Zbývající inventář: " + this.inventory.join(", "));
     } else {
-        zprava = `✅ Číslo ${cislo} je LICHÉ`;
-        typ = 'LICHÉ';
-        resultDiv.className = 'success';
+      alert("Nemáš žádný lektvar v inventáři!");
     }
+  }
+};
 
-    resultDiv.textContent = zprava;
-    resultDiv.style.display = 'block';
-
-    // Uložení do historie
-    const cas = new Date().toLocaleTimeString('cs-CZ');
-    historia.unshift(`${cislo} → ${typ} (${cas})`);
-
-    // Omezení historie na posledních 10 položek
-    if (historia.length > 10) {
-        historia.pop();
-    }
-
-    // Aktualizace historyie
-    aktualizujHistorii();
-
-    // Vyčistění inputu
-    cisloInput.value = '';
-    cisloInput.focus();
-}
-
-function aktualizujHistorii() {
-    const historiaList = document.getElementById('historia');
-    if (!historiaList) return; // Pokud nejsme na index3.html
-
-    historiaList.innerHTML = '';
-    historia.forEach(zaznam => {
-        const li = document.createElement('li');
-        li.textContent = zaznam;
-        historiaList.appendChild(li);
-    });
-}
-
-// Umožnit potvrzení pomocí Enter
-document.addEventListener('DOMContentLoaded', function() {
-    const cisloInput = document.getElementById('cislo');
-    if (cisloInput) {
-        cisloInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                kontrola();
-            }
-        });
-    }
-
-    console.log('✅ Script načten a aktivní');
+document.addEventListener("keydown", function(event) {
+  if (event.key === "e" || event.key === "E") {
+    hrac.vypijLektvar();
+  }
 });
+
+let mujPanel = document.getElementById("tajemstvi");
+alert(mujPanel);
+
+let hlavniNadpis = document.getElementById("nadpis");
+
+hlavniNadpis.textContent = "čAu BrO";
+
+
+hlavniNadpis.style.color = "white";
+
+
+hlavniNadpis.style.backgroundColor = "darkblue";
