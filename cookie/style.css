@@ -102,3 +102,36 @@ h1 {
     color: #202020;
     margin-top: 4px;
 }
+
+/* ========================================================================== */
+/* DOPLNĚNÉ STYLY PRO NOVÉ FUNKCE (aby seděly k tvému designu) */
+/* ========================================================================== */
+
+.akce-pod-susenkou {
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.zlata-karta {
+    align-items: center;
+    font-weight: bold;
+    color: #b07d00;
+    border: 2px solid #ffd700;
+    background-color: #fffdf2;
+}
+
+.zlata-karta:hover {
+    background-color: #fdf5c4;
+}
+
+.vysledek-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* Třída, která schová celý obchod na začátku hry */
+.skryty {
+    display: none !important;
+}
